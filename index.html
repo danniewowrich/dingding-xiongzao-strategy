@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>叮叮懒人菜&小熊早安 · 视频号 7-10月经营策略</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --brand: #2BA3E0;
+    --brand-dark: #1A7AB8;
+    --brand-light: #E8F4FB;
+    --orange: #F39C12;
+    --green: #7CB342;
+    --red: #E74C3C;
+    --ink: #1A2332;
+    --ink-2: #4A5568;
+    --ink-3: #8895A7;
+    --bg: #F5F8FB;
+    --card: #FFFFFF;
+    --line: #E2E8F0;
+    --shadow: 0 4px 24px rgba(43,163,224,0.08);
+    --shadow-lg: 0 12px 48px rgba(26,122,184,0.12);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  /* ============ HERO ============ */
+  .hero {
+    background: linear-gradient(135deg, #2BA3E0 0%, #1A7AB8 60%, #154E7C 100%);
+    color: #fff;
+    padding: 80px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -30%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(243,156,18,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero .tag {
+    display: inline-block; padding: 6px 16px;
+    background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px; font-size: 13px; margin-bottom: 24px; backdrop-filter: blur(10px);
+  }
+  .hero h1 {
+    font-size: 52px; font-weight: 800; letter-spacing: -1px;
+    line-height: 1.15; margin-bottom: 20px;
+  }
+  .hero h1 .accent { color: #FFD166; }
+  .hero .sub {
+    font-size: 18px; opacity: 0.92; max-width: 720px; margin-bottom: 40px;
+  }
+  .hero-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-card {
+    background: rgba(255,255,255,0.12); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px; padding: 20px 28px; min-width: 180px;
+  }
+  .stat-card .num { font-size: 32px; font-weight: 800; color: #FFD166; }
+  .stat-card .label { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+  /* ============ CONTAINER ============ */
+  .container { max-width: 1200px; margin: -50px auto 0; padding: 0 24px 80px; position: relative; z-index: 3; }
+  .section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; }
+  .section-num {
+    display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: #fff; border-radius: 10px; font-weight: 700; margin-right: 14px;
+    box-shadow: 0 4px 12px rgba(43,163,224,0.3);
+  }
+  .section h2 {
+    font-size: 28px; font-weight: 800; color: var(--ink); display: inline-block;
+    vertical-align: middle;
+  }
+  .section .sub-title {
+    font-size: 14px; color: var(--ink-3); margin-top: 8px; margin-left: 50px;
+  }
+  .card {
+    background: var(--card); border-radius: 16px; padding: 28px;
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+  }
+  .card + .card { margin-top: 16px; }
+  .card h3 {
+    font-size: 18px; font-weight: 700; color: var(--ink);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  }
+  .card h3::before {
+    content: ''; width: 4px; height: 18px;
+    background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+    border-radius: 2px;
+  }
+  .card h4 {
+    font-size: 15px; font-weight: 700; color: var(--brand-dark);
+    margin: 18px 0 10px;
+  }
+  .card p { color: var(--ink-2); margin-bottom: 8px; }
+  .card ul, .card ol { padding-left: 22px; color: var(--ink-2); }
+  .card li { margin-bottom: 6px; }
+
+  /* ============ TABLE ============ */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th {
+    background: linear-gradient(180deg, #F0F7FC 0%, #E1EFF8 100%);
+    color: var(--ink); font-weight: 700; text-align: left;
+    padding: 12px 14px; border-bottom: 2px solid var(--brand);
+    white-space: nowrap;
+  }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--ink-2); vertical-align: top; }
+  tr:hover td { background: #FAFCFE; }
+  td strong, th strong { color: var(--ink); }
+  td .pill {
+    display: inline-block; padding: 2px 10px; border-radius: 10px;
+    font-size: 12px; font-weight: 600;
+  }
+  .pill-primary { background: var(--brand-light); color: var(--brand-dark); }
+  .pill-orange { background: #FEF3E2; color: #C77800; }
+  .pill-green { background: #E8F5E0; color: #4F7F1C; }
+  .pill-red { background: #FBE7E4; color: #B83828; }
+
+  /* ============ GRID ============ */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 36px; }
+    .hero { padding: 60px 20px 80px; }
+  }
+
+  /* ============ MINI CARDS ============ */
+  .mini-card {
+    background: var(--card); border-radius: 12px; padding: 20px;
+    border: 1px solid var(--line);
+    transition: all 0.3s;
+  }
+  .mini-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .mini-card .title {
+    font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px;
+  }
+  .mini-card .desc { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .mini-card .big-num {
+    font-size: 28px; font-weight: 800; color: var(--brand);
+    margin: 4px 0;
+  }
+
+  /* ============ HIGHLIGHT BOX ============ */
+  .highlight {
+    background: linear-gradient(135deg, #FFF8E7 0%, #FEF3E2 100%);
+    border-left: 4px solid var(--orange);
+    padding: 18px 22px; border-radius: 8px;
+    margin: 16px 0;
+  }
+  .highlight strong { color: #C77800; }
+  .info-box {
+    background: linear-gradient(135deg, #E8F4FB 0%, #D6E9F5 100%);
+    border-left: 4px solid var(--brand);
+    padding: 18px 22px; border-radius: 8px;
+    margin: 16px 0;
+  }
+  .info-box strong { color: var(--brand-dark); }
+
+  /* ============ DAREN 1+N ============ */
+  .daren-model {
+    display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: stretch;
+    margin: 20px 0;
+  }
+  @media (max-width: 768px) { .daren-model { grid-template-columns: 1fr; } }
+  .daren-1 {
+    background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);
+    color: #fff; padding: 28px; border-radius: 16px;
+    display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 8px 24px rgba(243,156,18,0.3);
+  }
+  .daren-1 .badge {
+    display: inline-block; padding: 4px 12px;
+    background: rgba(255,255,255,0.25); border-radius: 12px;
+    font-size: 12px; margin-bottom: 12px; align-self: flex-start;
+  }
+  .daren-1 .name { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+  .daren-1 .role { font-size: 14px; opacity: 0.95; margin-bottom: 14px; }
+  .daren-1 ul { padding-left: 18px; font-size: 13px; }
+  .daren-1 li { margin-bottom: 4px; }
+
+  .daren-n {
+    background: var(--card); padding: 24px; border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+  .daren-n h4 { color: var(--brand-dark); margin-bottom: 12px; }
+  .daren-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .daren-tag {
+    padding: 6px 12px; background: var(--brand-light);
+    color: var(--brand-dark); border-radius: 14px; font-size: 12px;
+    border: 1px solid #C8E2F3;
+  }
+
+  /* ============ FLOW ============ */
+  .flow {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    margin: 20px 0;
+  }
+  @media (max-width: 768px) { .flow { grid-template-columns: 1fr 1fr; } }
+  .flow-step {
+    background: var(--card); padding: 18px; border-radius: 12px;
+    border: 1px solid var(--line); position: relative; text-align: center;
+  }
+  .flow-step .step-num {
+    width: 32px; height: 32px; line-height: 32px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: #fff; border-radius: 50%; margin: 0 auto 10px;
+    font-weight: 700;
+  }
+  .flow-step .step-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .flow-step .step-desc { font-size: 12px; color: var(--ink-3); }
+
+  /* ============ KPI BANNER ============ */
+  .kpi-banner {
+    background: linear-gradient(135deg, #1A7AB8 0%, #0F4F7F 100%);
+    color: #fff; padding: 32px; border-radius: 16px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-lg);
+  }
+  .kpi-banner h3 { color: #FFD166; font-size: 20px; margin-bottom: 18px; }
+  .kpi-banner h3::before { display: none; }
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  }
+  @media (max-width: 768px) { .kpi-grid { grid-template-columns: 1fr 1fr; } }
+  .kpi-item { text-align: center; }
+  .kpi-item .v { font-size: 26px; font-weight: 800; color: #FFD166; }
+  .kpi-item .l { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    text-align: center; padding: 40px 20px;
+    color: var(--ink-3); font-size: 13px;
+    border-top: 1px solid var(--line); margin-top: 40px;
+  }
+  .footer strong { color: var(--brand-dark); }
+
+  /* TOC */
+  .toc {
+    position: sticky; top: 20px;
+    background: var(--card); border-radius: 12px;
+    padding: 18px; border: 1px solid var(--line);
+    box-shadow: var(--shadow); font-size: 13px;
+  }
+  .toc-title { font-weight: 700; color: var(--ink); margin-bottom: 10px; font-size: 14px; }
+  .toc a {
+    display: block; padding: 6px 10px; margin: 2px 0;
+    color: var(--ink-2); text-decoration: none; border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .toc a:hover { background: var(--brand-light); color: var(--brand-dark); }
+
+  /* GROWTH BAR */
+  .growth-bar { display: flex; align-items: flex-end; gap: 16px; height: 220px; margin: 20px 0; padding: 24px 20px 16px; background: var(--bg); border-radius: 12px; }
+  .growth-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .growth-col .bar { width: 100%; max-width: 80px; border-radius: 8px 8px 0 0; transition: all 0.3s; min-height: 4px; }
+  .growth-col .bar:hover { opacity: 0.85; transform: scaleY(1.03); }
+  .growth-col .val { font-size: 13px; font-weight: 800; color: var(--ink); }
+  .growth-col .lbl { font-size: 11px; color: var(--ink-3); }
+  .brand-split { display: flex; height: 36px; border-radius: 8px; overflow: hidden; margin: 12px 0; }
+  .brand-split .seg { display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="tag">📱 视频号专属经营策略 · 2026 Q3-Q4</span>
+    <h1>叮叮懒人菜&小熊早安<br><span class="accent">7-10月 全方位经营策略</span></h1>
+    <p class="sub">达播测新品 · 自营追击双引擎 ｜ 1+N 达人矩阵 ｜ 直播间 × 投放 × 种草 × 话题四模块联动</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="num">8000w</div><div class="label">上半年已完成 GMV</div></div>
+      <div class="stat-card"><div class="num">1.5亿</div><div class="label">全年目标</div></div>
+      <div class="stat-card"><div class="num">7000w</div><div class="label">7-12月剩余任务</div></div>
+      <div class="stat-card"><div class="num">4个月</div><div class="label">策略覆盖周期</div></div>
+    </div>
+    <div style="margin-top: 28px; max-width: 720px;">
+      <div style="font-size: 13px; opacity: 0.85; margin-bottom: 8px;">上半年生意构成</div>
+      <div class="brand-split">
+        <div class="seg" style="width: 90%; background: linear-gradient(90deg, #1A7AB8, #2BA3E0);">叮叮懒人菜 7200w（90%）</div>
+        <div class="seg" style="width: 10%; background: linear-gradient(90deg, #F39C12, #E67E22); font-size: 11px;">800w</div>
+      </div>
+      <div style="font-size: 12px; opacity: 0.7; margin-top: 6px;">→ 7-10月策略目标：小熊早安月均 GMV 从 133w 提升至 300w+，占比从 10% 跃升至 25%+，打造集团第二增长曲线</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- ============ 01 整体框架 ============ -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <span class="section-num">01</span><h2>核心策略框架</h2>
+    <div class="sub-title">双引擎模型 · 视频号生态闭环</div>
+  </div>
+
+  <div class="card">
+    <h3>双引擎模型</h3>
+    <div class="grid-2">
+      <div class="mini-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FEF3E2 100%); border-color: #F39C12;">
+        <div class="title" style="color:#C77800; font-size:16px;">🔍 左引擎：达播测新品</div>
+        <div class="desc" style="color: var(--ink-2); margin-top: 8px;">
+          <strong>定位：侦察兵</strong><br>
+          用<strong>馋嘴汇为主 + N 个中腰部达人</strong>矩阵快速测试各 SKU 市场反馈，找到——
+          <ul style="margin-top:8px; padding-left:18px;">
+            <li>哪句话术最打动人</li>
+            <li>哪个 SKU 卖得最好</li>
+            <li>评论区在问什么</li>
+            <li>哪个价格点转化最佳</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mini-card" style="background: linear-gradient(135deg, #E8F4FB 0%, #D6E9F5 100%); border-color: var(--brand);">
+        <div class="title" style="color: var(--brand-dark); font-size:16px;">🎯 右引擎：自营追击</div>
+        <div class="desc" style="color: var(--ink-2); margin-top: 8px;">
+          <strong>定位：主力军</strong><br>
+          把达人跑通的产品/话术/人群包，在视频号<strong>自播间 + 微信豆 + ADQ</strong> 上复制放量——
+          <ul style="margin-top:8px; padding-left:18px;">
+            <li>自营直播间跟进</li>
+            <li>直播与小店投放跟进</li>
+            <li>达人种草视频跟进</li>
+            <li>话题内容跟进</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 20px;">
+      <strong>核心逻辑：</strong>达播负责"发现"什么能火，自营负责"放大"已经验证的爆款。两个引擎通过<strong>每周复盘机制</strong>实时同步，形成"测试→验证→放量"的闭环飞轮。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>双品牌战略定位</h3>
+    <div class="grid-2">
+      <div class="mini-card" style="background: linear-gradient(135deg, #E8F4FB 0%, #D6E9F5 100%); border-color: var(--brand);">
+        <div class="title" style="color: var(--brand-dark); font-size: 16px;">🏠 基本盘：叮叮懒人菜（90%）</div>
+        <div class="desc" style="color: var(--ink-2); margin-top: 10px;">
+          <strong>上半年 GMV：7200w</strong> · 月均 1200w<br>
+          <ul style="margin-top: 8px; padding-left: 18px;">
+            <li>酸菜鱼、金汤鱼等预制菜为主力</li>
+            <li>自营直播为核心渠道，稳健运营</li>
+            <li>7-10月策略：<strong>稳量提效</strong>，维持月均 1000w+ 基本盘</li>
+            <li>资源适度向小熊早安倾斜，不影响基本盘</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mini-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FEF3E2 100%); border-color: #F39C12;">
+        <div class="title" style="color: #C77800; font-size: 16px;">🚀 增长引擎：小熊早安（10% → 25%+）</div>
+        <div class="desc" style="color: var(--ink-2); margin-top: 10px;">
+          <strong>上半年 GMV：800w</strong> · 月均 133w<br>
+          <ul style="margin-top: 8px; padding-left: 18px;">
+            <li>儿童营养早餐线（手抓饼/鱼片/鸡排等）</li>
+            <li>达播测新品 + 自营追击双引擎驱动</li>
+            <li>7-10月策略：<strong>爆发式增长</strong>，月均冲 300w+，占比翻倍</li>
+            <li>通过 1+N 达人矩阵快速验证爆品，自营放量</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="highlight" style="margin-top: 20px;">
+      <strong>增长路径：</strong>小熊早安月均 GMV 从 <strong>133w → 300w+</strong>（+125%），占集团比重从 <strong>10% → 25%+</strong>。测品成功的 SKU 进入自营追击和投放放量，形成"达播验证 → 自营放大 → 投放加速"的增长飞轮。懒人菜作为基本盘提供现金流和资源支撑。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 产品线 ============ -->
+<section class="section" id="s2">
+  <div class="section-header">
+    <span class="section-num">02</span><h2>产品线与策略角色</h2>
+    <div class="sub-title">8 大 SKU · 分层定位</div>
+  </div>
+
+  <div class="card">
+    <h3>叮叮懒人菜 · 基本盘产品线</h3>
+    <p style="color: var(--ink-3); font-size: 13px; margin-bottom: 12px;">预制菜主力品牌，上半年贡献 7200w GMV（90%），7-10月以稳量提效为主</p>
+    <table>
+      <tr>
+        <th>产品</th><th>定位</th><th>价格带</th><th>核心卖点</th><th>策略角色</th>
+      </tr>
+      <tr><td><strong>金汤酸菜鱼</strong></td><td>品牌旗舰</td><td>39.9-69.9元</td><td>老坛发酵酸菜、巴沙鱼/黑鱼片可选</td><td><span class="pill pill-orange">主推爆款</span></td></tr>
+      <tr><td><strong>番茄鱼/藤椒鱼</strong></td><td>口味拓展</td><td>39.9-59.9元</td><td>多口味满足不同偏好</td><td><span class="pill pill-primary">常规款</span></td></tr>
+      <tr><td><strong>水煮鱼/烤鱼</strong></td><td>场景拓展</td><td>49.9-79.9元</td><td>家庭聚餐场景</td><td><span class="pill pill-primary">场景款</span></td></tr>
+      <tr><td><strong>其他预制菜</strong></td><td>长尾补充</td><td>29.9-99.9元</td><td>小酥肉/肥肠/牛蛙等</td><td><span class="pill pill-green">补充款</span></td></tr>
+    </table>
+    <div class="info-box" style="margin-top: 12px;">
+      <strong>7-10月策略：</strong>懒人菜以自营直播为核心，维持月均 1000w+ 基本盘。开学季（9月）叠加家庭聚餐场景，预计单月冲 1200w+。不占用达播测品资源，但自营直播间可穿插推荐懒人菜品。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>小熊早安 · 增长引擎产品线</h3>
+    <p style="color: var(--ink-3); font-size: 13px; margin-bottom: 12px;">儿童营养早餐线，上半年贡献 800w GMV（10%），7-10月通过达播测品+自营追击实现爆发增长</p>
+    <table>
+      <tr>
+        <th>产品</th><th>定位</th><th>价格带</th><th>核心卖点</th><th>策略角色</th>
+      </tr>
+      <tr><td><strong>A2 牛奶手抓饼</strong></td><td>品牌旗舰</td><td>69.9元/4包</td><td>A2牛奶和面、椰子油+黄油、6大0添加</td><td><span class="pill pill-orange">主推爆款</span></td></tr>
+      <tr><td><strong>铁棍山药黑猪肉小笼包</strong></td><td>差异化儿童早餐</td><td>49.9-89.9元</td><td>无葱配方、无抗黑猪、铁棍山药</td><td><span class="pill pill-primary">利润款</span></td></tr>
+      <tr><td><strong>儿童去刺黑鱼片</strong></td><td>母婴心智锚点</td><td>49.9-109.9元</td><td>0保水剂、100片仅1根短刺、得鱼率≥85%</td><td><span class="pill pill-red">新品测品</span></td></tr>
+      <tr><td><strong>DHA 鱼排</strong></td><td>营养升级款</td><td>89.9-119.9元</td><td>DHA藻油、4.8倍奶蛋白、低脂轻食</td><td><span class="pill pill-red">新品测品</span></td></tr>
+      <tr><td><strong>双蛋白藜麦鸡排</strong></td><td>高性价比引流</td><td>49.9-99.9元</td><td>动植双蛋白、玻利维亚藜麦、5分钟即享</td><td><span class="pill pill-green">引流款</span></td></tr>
+      <tr><td><strong>无抗双蛋白藜麦鸡排</strong></td><td>高端信任款</td><td>69.9-89.9元</td><td>SGS无抗认证、减钠20%、原肉整切</td><td><span class="pill pill-primary">高端款</span></td></tr>
+      <tr><td><strong>DHA 鲜虾饼</strong></td><td>儿童营养款</td><td>79.9-99.9元</td><td>2%DHA藻油、6-8颗大虾仁、无面粉</td><td><span class="pill pill-red">新品测品</span></td></tr>
+      <tr><td><strong>无抗拇指儿童烤肠</strong></td><td>儿童零食</td><td>89.9元/4盒</td><td>无抗认证、90%猪肉、4倍钙</td><td><span class="pill pill-green">儿童场景</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>7-10月产品节奏</h3>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">7</div>
+        <div class="step-title">Q3 启动期</div>
+        <div class="step-desc">A2手抓饼为主<br>测黑鱼片+虾饼</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">8</div>
+        <div class="step-title">Q3 发力期</div>
+        <div class="step-desc">手抓饼+鸡排组合<br>测DHA鱼排+无抗鸡排</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">9</div>
+        <div class="step-title">Q3 高峰期</div>
+        <div class="step-desc"><strong style="color:var(--orange)">开学季全品类爆发</strong><br>馋嘴汇专场</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">10</div>
+        <div class="step-title">Q4 蓄力期</div>
+        <div class="step-desc">渔博会工厂溯源<br>双11预热</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 达播测新品 1+N ============ -->
+<section class="section" id="s3">
+  <div class="section-header">
+    <span class="section-num">03</span><h2>达播测新品策略（左引擎）</h2>
+    <div class="sub-title">1 + N 达人矩阵 · 视频号专属</div>
+  </div>
+
+  <div class="card">
+    <h3>1 + N 达人矩阵模型</h3>
+    <div class="daren-model">
+      <div class="daren-1">
+        <span class="badge">⭐ 头部 · 1</span>
+        <div class="name">馋嘴汇</div>
+        <div class="role">视频号头部美食直播达人</div>
+        <ul>
+          <li>视频号直播带货榜单稳定 TOP 级别</li>
+          <li>美食饮品垂类标签精准</li>
+          <li>单场 GMV 量级大、声量强</li>
+          <li>承担"品牌势能 + 爆款引爆"双重价值</li>
+        </ul>
+      </div>
+      <div class="daren-n">
+        <h4>N 个中腰部达人（每月 12-20 位）</h4>
+        <p style="color: var(--ink-2); font-size: 13px; margin-bottom: 14px;">围绕馋嘴汇专场前后形成<strong>"前测中爆后承接"</strong>节奏，分散测试不同人群、不同 SKU、不同价格点的真实反应。</p>
+
+        <h4 style="margin-top: 8px;">中腰部达人池标签（视频号）</h4>
+        <div class="daren-tags">
+          <span class="daren-tag">豆儿饿了</span>
+          <span class="daren-tag">红红的菜</span>
+          <span class="daren-tag">泰山赵优秀</span>
+          <span class="daren-tag">罗伟明和奶奶</span>
+          <span class="daren-tag">妍伊夫妇</span>
+          <span class="daren-tag">宝哥宝嫂</span>
+          <span class="daren-tag">蓓蕾夫妇</span>
+          <span class="daren-tag">有香夫妇</span>
+          <span class="daren-tag">小糖糖女士</span>
+          <span class="daren-tag">白菜GG</span>
+          <span class="daren-tag">小李飞叨</span>
+          <span class="daren-tag">宋玉希</span>
+          <span class="daren-tag">深圳汪汪</span>
+          <span class="daren-tag">卡什瑜伽</span>
+          <span class="daren-tag">小满和婆婆</span>
+          <span class="daren-tag">曹奶奶爱唠嗑</span>
+        </div>
+
+        <h4>3 类标签覆盖</h4>
+        <table style="margin-top: 6px;">
+          <tr><th>标签</th><th>占比</th><th>核心价值</th></tr>
+          <tr><td>母婴/亲子家庭</td><td>50%</td><td>儿童线产品主力（黑鱼片/虾饼/烤肠/小笼包）</td></tr>
+          <tr><td>家庭美食/夫妻档</td><td>30%</td><td>家庭场景代入感强（手抓饼/鸡排）</td></tr>
+          <tr><td>健康/轻食/瑜伽</td><td>20%</td><td>成人线产品（DHA鱼排/无抗鸡排）</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>1+N 协同节奏：</strong>馋嘴汇做<strong>月度 1-2 次品牌专场</strong>形成势能高点；N 位中腰部达人在专场<strong>前 7-10 天预热铺量</strong>、专场<strong>后 7 天承接转化</strong>，形成"波浪式"达播节奏。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>月度测品节奏</h3>
+
+    <h4>7月：聚焦"儿童线"三款新品集中测试</h4>
+    <table>
+      <tr><th>测试产品</th><th>目标达人类型</th><th>测试数量</th><th>成功标准</th></tr>
+      <tr><td><strong>儿童去刺黑鱼片</strong></td><td>母婴/育儿（N 中筛选）</td><td>8-10 位</td><td>ROI≥1.5，评论区"孩子爱吃""没刺放心"高频</td></tr>
+      <tr><td><strong>DHA 鲜虾饼</strong></td><td>宝妈/营养类</td><td>6-8 位</td><td>ROI≥1.3，加购率 >15%</td></tr>
+      <tr><td><strong>DHA 鱼排</strong></td><td>减脂/轻食类</td><td>5-7 位</td><td>ROI≥1.4，复购提及率高</td></tr>
+    </table>
+    <p style="color: var(--ink-2); font-size: 13px; margin-top: 8px;">📌 <strong>馋嘴汇 7月排期：</strong>月底安排 1 场品牌专场（全货盘），新品作为"惊喜品"植入，借势能给新品做曝光背书。</p>
+
+    <h4>8月："成人线"测试 + 7月成功新品放量</h4>
+    <table>
+      <tr><th>测试产品</th><th>目标达人类型</th><th>测试数量</th></tr>
+      <tr><td><strong>无抗双蛋白藜麦鸡排</strong></td><td>健康/健身/瑜伽类</td><td>6-8 位</td></tr>
+      <tr><td><strong>铁棍山药小笼包</strong></td><td>亲子早餐/家庭美食</td><td>5-7 位</td></tr>
+    </table>
+    <p style="color: var(--ink-2); font-size: 13px; margin-top: 8px;">📌 7月跑通的爆品进入 <strong>15-20 位 N 达人放量阶段</strong>。馋嘴汇 8月专场聚焦"开学季预售"。</p>
+
+    <h4>9月：开学季全面爆发（馋嘴汇双专场）</h4>
+    <ul>
+      <li><strong>馋嘴汇 2 场专场</strong>（月初 + 月中）：开学季品牌专场，全品类组合"开学早餐套餐"</li>
+      <li><strong>N 达人 20-25 位</strong>：围绕"开学季"主题分发，A2手抓饼+小笼包为主推</li>
+      <li>正式确定 Q4 主力 SKU 组合</li>
+    </ul>
+
+    <h4>10月：巩固 + 渔博会溯源</h4>
+    <ul>
+      <li>维持稳定达人合作频率（每月 15-20 位 N 达人）</li>
+      <li>结合<strong>渔博会做工厂溯源直播</strong>（馋嘴汇 + N 达人到厂直播）</li>
+      <li>开始为双11储备达播资源</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>达播数据监控表（每个新品必追）</h3>
+    <table>
+      <tr><th>维度</th><th>关键指标</th><th>判断阈值</th></tr>
+      <tr><td>转化效率</td><td>直播间 ROI / 点击转化率(CVR)</td><td>ROI≥1.5 合格；≥2.0 优秀</td></tr>
+      <tr><td>用户接受度</td><td>商品点击率(CTR) / 加购率</td><td>CTR>3%，加购率>10%</td></tr>
+      <tr><td>口碑风向</td><td>评论正负比 / 高频提问 TOP5</td><td>正面>70% 合格</td></tr>
+      <tr><td>复购潜力</td><td>回购提及率 / "再买"关键词</td><td>>5% 提及视为有复购预期</td></tr>
+      <tr><td>人群匹配</td><td>下单画像 vs 达人粉丝画像</td><td>重合度>60% 说明匹配</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>达播 → 自营 信息回流机制 ⚡</h3>
+    <p style="color: var(--ink-2); margin-bottom: 14px;">这是整个策略最关键的闭环——达播测出来的经验必须回流给自营团队。</p>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">①</div><div class="step-title">每日记录</div><div class="step-desc">高光切片<br>话术/峰值/热评</div></div>
+      <div class="flow-step"><div class="step-num">②</div><div class="step-title">周五碰头</div><div class="step-desc">达播+自营+投放<br>三方复盘</div></div>
+      <div class="flow-step"><div class="step-num">③</div><div class="step-title">下周执行</div><div class="step-desc">自营话术/价格<br>投放素材调整</div></div>
+      <div class="flow-step"><div class="step-num">④</div><div class="step-title">月度报告</div><div class="step-desc">新品定级<br>SKU 排名</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 自营追击 ============ -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <span class="section-num">04</span><h2>自营追击策略（右引擎）</h2>
+    <div class="sub-title">直播间 × 投放 × 种草 × 话题 四模块联动</div>
+  </div>
+
+  <!-- 4.1 自营直播间 -->
+  <div class="card">
+    <h3>4.1 自营直播间策略</h3>
+
+    <h4>7-10 月场次节奏</h4>
+    <table>
+      <tr><th>月</th><th>日均场次</th><th>单场时长</th><th>场景主题</th><th>主推组合</th></tr>
+      <tr><td><strong>7月</strong></td><td>3→<strong>4场</strong></td><td>4-6h</td><td>暑期早餐不将就</td><td>手抓饼 + 黑鱼片（新品引入）</td></tr>
+      <tr><td><strong>8月</strong></td><td><strong>4→5场</strong></td><td>4-6h</td><td>开学倒计时 早餐准备</td><td>手抓饼 + 小笼包 + 鸡排</td></tr>
+      <tr><td><strong>9月</strong></td><td><strong>5-6场</strong></td><td>6-8h</td><td>开学季大促（全天候）</td><td>全品类套餐</td></tr>
+      <tr><td><strong>10月</strong></td><td>5-6场</td><td>6-8h</td><td>双11提前购 + 渔博溯源</td><td>巩固爆款 + 新品试水</td></tr>
+    </table>
+
+    <h4>单场脚本结构（新品引入场范例）</h4>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">1</div><div class="step-title">福利炸场</div><div class="step-desc">0-15min<br>引流款拉人气</div></div>
+      <div class="flow-step"><div class="step-num">2</div><div class="step-title">新品首推</div><div class="step-desc">15-45min<br>痛点→工艺→场景→机制</div></div>
+      <div class="flow-step"><div class="step-num">3</div><div class="step-title">爆款主推</div><div class="step-desc">45-90min<br>A2手抓饼标准化</div></div>
+      <div class="flow-step"><div class="step-num">4</div><div class="step-title">返场收尾</div><div class="step-desc">90min+<br>销冠返场+预告</div></div>
+    </div>
+
+    <h4>关键升级项</h4>
+    <table>
+      <tr><th>方向</th><th>具体动作</th><th>预期效果</th></tr>
+      <tr><td>视觉升级</td><td>新品专用道具（去刺对比图、配料表立牌、SGS 证书框）</td><td>专业感↑ 停留时长 +30s</td></tr>
+      <tr><td>主播培训</td><td>每周同步达播测品结论，主播必须会说新品话术</td><td>转化率↑</td></tr>
+      <tr><td>互动设计</td><td>新品环节设置"评论区问答"——问对送样品</td><td>互动率↑ 评论沉淀</td></tr>
+      <tr><td>时段优化</td><td>早场 7-10 点（早餐场景）+ 晚场 18-22 点（决策场景）</td><td>匹配用户行为习惯</td></tr>
+    </table>
+  </div>
+
+  <!-- 4.2 投放 -->
+  <div class="card">
+    <h3>4.2 投放跟进策略（视频号生态）</h3>
+
+    <h4>投放结构（视频号专属）</h4>
+    <div class="grid-3">
+      <div class="mini-card">
+        <div class="title" style="color: var(--brand-dark);">微信豆 - 视频号直播投流</div>
+        <div class="big-num">~55%</div>
+        <div class="desc">直播间引流为主，单场冷启动加热<br>ROI 目标：≥2.0</div>
+      </div>
+      <div class="mini-card">
+        <div class="title" style="color: var(--brand-dark);">ADQ - 朋友圈/视频号广告</div>
+        <div class="big-num">~30%</div>
+        <div class="desc">短视频挂车 + 商品卡<br>ROI 目标：≥2.5</div>
+      </div>
+      <div class="mini-card">
+        <div class="title" style="color: var(--brand-dark);">视频号小店加热</div>
+        <div class="big-num">~15%</div>
+        <div class="desc">商品卡加热 + 搜索流量截取<br>ROI 目标：≥3.0</div>
+      </div>
+    </div>
+
+    <h4>7-10月投放路径</h4>
+    <table>
+      <tr><th>月</th><th>日均预算</th><th>核心动作</th><th>里程碑</th></tr>
+      <tr><td>7月</td><td>1.5-2w</td><td>测素材测人群（3-5 条素材冷启）</td><td>跑通 3-5 条素材，ROI 稳 2.0+</td></tr>
+      <tr><td>8月</td><td>2-2.5w</td><td>放量期，增加小店比例</td><td>小店 ROI 冲 3.0+</td></tr>
+      <tr><td>9月</td><td><strong>3-3.5w</strong></td><td>大促全开（开学季容忍 ROI 短暂下降至 1.8）</td><td>追求 GMV 总量</td></tr>
+      <tr><td>10月</td><td>2.5-3w</td><td>精细期，淘汰低效广告</td><td>ROI 回升 2.5+，为双11蓄力</td></tr>
+    </table>
+
+    <h4>素材策略（视频号生态适配）</h4>
+    <table>
+      <tr><th>素材类型</th><th>占比</th><th>说明</th></tr>
+      <tr><td>家庭场景实拍</td><td>60%</td><td>厨房实景加热过程，孩子吃早餐真实反应</td></tr>
+      <tr><td>配料表/检测报告</td><td>20%</td><td>SGS 证书特写、"配料表干净得只有 X 行"</td></tr>
+      <tr><td>达人切片复用</td><td>15%</td><td>馋嘴汇 + N 达人高光片段（授权后）</td></tr>
+      <tr><td>工厂溯源</td><td>5%</td><td>生产线、质检过程，建立信任</td></tr>
+    </table>
+
+    <h4>达播 → 投放 实时联动表</h4>
+    <table>
+      <tr><th>达播信号</th><th>投放响应</th></tr>
+      <tr><td>某 N 达人推黑鱼片 ROI=3.0</td><td>立刻制作同类素材投放微信豆，定向相似人群</td></tr>
+      <tr><td>评论区高频"配料表干净"</td><td>制作配料表特写素材，加大 ADQ 投放</td></tr>
+      <tr><td>某价格点转化率明显高</td><td>调整小店落地页价格展示顺序</td></tr>
+      <tr><td>某年龄段下单占比高</td><td>新建 DMP 人群包定向投放</td></tr>
+    </table>
+  </div>
+
+  <!-- 4.3 种草 -->
+  <div class="card">
+    <h3>4.3 达人种草视频跟进</h3>
+    <p style="color: var(--ink-3); font-size: 13px; margin-bottom: 14px;">种草视频 ≠ 达人直播：前者长尾种草，后者即时转化。</p>
+
+    <h4>三层种草矩阵</h4>
+    <table>
+      <tr><th>层级</th><th>达人类型</th><th>月更频率</th><th>内容形式</th></tr>
+      <tr><td>第一层</td><td><strong>馋嘴汇 + 头部 N（2-3 位）</strong></td><td>2-3 条/月</td><td>深度测评 Vlog / 专业科普口播</td></tr>
+      <tr><td>第二层</td><td>腰部 N 达人</td><td>30-50 条/月</td><td>痛点反转 / 配料表对比 / 真实试吃 / 亲子场景</td></tr>
+      <tr><td>第三层</td><td>KOC 素人</td><td>100+ 条/月</td><td>15-30s 简单开箱 + 加热 + 孩子吃</td></tr>
+    </table>
+
+    <h4>种草视频 4 大内容模板（腰部 N 用）</h4>
+    <div class="grid-4">
+      <div class="mini-card"><div class="title">痛点反转 · 30%</div><div class="desc">"以前给孩子做早餐要1小时，现在5分钟搞定"</div></div>
+      <div class="mini-card"><div class="title">配料表对比 · 25%</div><div class="desc">"市面手抓饼 vs 小熊手抓饼，配料表一比吓一跳"</div></div>
+      <div class="mini-card"><div class="title">真实试吃 · 25%</div><div class="desc">"办公室同事盲测，猜不到这个只要 X 元"</div></div>
+      <div class="mini-card"><div class="title">亲子场景 · 20%</div><div class="desc">"让孩子自己做的营养早餐，他居然全吃完了"</div></div>
+    </div>
+
+    <h4>种草视频 × 自营 配合节奏</h4>
+    <div class="flow">
+      <div class="flow-step"><div class="step-num">T</div><div class="step-title">视频发布</div><div class="step-desc">达人按 brief 发布</div></div>
+      <div class="flow-step"><div class="step-num">+3d</div><div class="step-title">直播间承接</div><div class="step-desc">"刚好今天那款有活动"</div></div>
+      <div class="flow-step"><div class="step-num">+7d</div><div class="step-title">投放截流</div><div class="step-desc">微信豆截搜索流量</div></div>
+      <div class="flow-step"><div class="step-num">+30d</div><div class="step-title">素材复用</div><div class="step-desc">官号二次剪辑</div></div>
+    </div>
+  </div>
+
+  <!-- 4.4 话题 -->
+  <div class="card">
+    <h3>4.4 话题内容跟进</h3>
+
+    <h4>7-10月话题日历</h4>
+    <table>
+      <tr><th>月</th><th>主话题</th><th>子话题</th><th>内容方向</th></tr>
+      <tr><td rowspan="2"><strong>7月</strong></td><td>#暑期早餐不重样</td><td>#5分钟早餐 #孩子爱吃的早餐 #懒人妈妈自救</td><td>暑假妈妈痛点：孩子在家天天要吃早饭</td></tr>
+      <tr><td>#给孩子选鱼的正确方式</td><td>#去刺黑鱼片 #儿童鱼怎么选</td><td>儿童黑鱼片教育向内容</td></tr>
+      <tr><td rowspan="2"><strong>8月</strong></td><td>#开学季早餐准备</td><td>#小学生早餐 #营养早餐打卡</td><td>开学前焦虑 + 解决方案</td></tr>
+      <tr><td>#手抓饼的神仙吃法</td><td>#A2牛奶手抓饼 #早餐DIY</td><td>UGC 征集 + 官方示范</td></tr>
+      <tr><td rowspan="2"><strong>9月</strong></td><td><strong>#开学第N天的早餐</strong></td><td>#30天早餐不重样 #小熊早安挑战赛</td><td>长期打卡话题，持续发酵</td></tr>
+      <tr><td>#配料表干净的儿童食品</td><td>#0添加 #配料表透明</td><td>信任建设话题</td></tr>
+      <tr><td><strong>10月</strong></td><td>#双11早餐囤货指南</td><td>#半年早餐备好了 #囤货攻略</td><td>提前种草双11</td></tr>
+    </table>
+
+    <h4>话题运营 SOP</h4>
+    <table>
+      <tr><th>要素</th><th>说明</th></tr>
+      <tr><td>话题发起</td><td>官方首发一条高质量种子视频（"我们找了100个妈妈..."）</td></tr>
+      <tr><td>达人邀请</td><td>给 N 达人提供话题 brief + 拍摄脚本（PDF 指南）</td></tr>
+      <tr><td>激励机制</td><td>优质 UGC 奖励：点赞 Top10 送一年份手抓饼</td></tr>
+      <tr><td>官方互动</td><td>官号在话题下高频评论 + 转发（每天 20+ 条）</td></tr>
+      <tr><td>数据监测</td><td>话题播放量 / 参与人数 / UGC 产量周报跟踪</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 05 月度执行 ============ -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <span class="section-num">05</span><h2>分月执行日历</h2>
+    <div class="sub-title">7-10 月四个月详细节奏</div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, #FFFBF0 0%, #FFF6E5 100%); border-color: #F39C12;">
+    <h3>7月 · 启动月 — "达播测品 + 自营起量"</h3>
+    <table>
+      <tr><th>周</th><th>达播</th><th>自营</th><th>投放</th><th>种草/话题</th></tr>
+      <tr><td>W1</td><td>确定首批 N 达人名单 + 寄样；馋嘴汇 7月底专场档期确认</td><td>新品话术培训 + 道具准备</td><td>账户搭建，首批素材上传</td><td>#暑期早餐不重样 种子视频发布</td></tr>
+      <tr><td>W2</td><td>3-5 位 N 达人陆续开播，重点盯儿童黑鱼片 + DHA 虾饼</td><td>每日 4 场，新品环节固定在开场后 30 分钟内</td><td>微信豆日耗拉到 1.5w，测 3-5 条素材</td><td>首批 KOC 视频上线（10 条+）</td></tr>
+      <tr><td>W3</td><td>第 1 波测品数据出初步结论</td><td>根据数据调整新品讲解时长/价格展示</td><td>素材迭代第一轮</td><td>话题进入发酵期</td></tr>
+      <tr><td>W4</td><td><strong>馋嘴汇月底专场</strong> + 输出《7月新品测品报告》</td><td>馋嘴汇专场后 7 天承接转化</td><td>专场期间预算放大 30%</td><td>馋嘴汇专场切片二次分发</td></tr>
+    </table>
+    <div class="kpi-banner" style="margin-top: 20px;">
+      <h3>7月 KPI</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="v">1250w</div><div class="l">总GMV（小熊250w）</div></div>
+        <div class="kpi-item"><div class="v">25-30 位</div><div class="l">达人合作数</div></div>
+        <div class="kpi-item"><div class="v">40-60 条</div><div class="l">种草视频</div></div>
+        <div class="kpi-item"><div class="v">3→4 场</div><div class="l">日均场次</div></div>
+        <div class="kpi-item"><div class="v">≥2.2</div><div class="l">综合 ROI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, #F0F9FF 0%, #E1F0FB 100%); border-color: var(--brand);">
+    <h3>8月 · 加速月 — "新品放量 + 开学季预热"</h3>
+    <ul style="margin: 8px 0 16px;">
+      <li><strong>W1：</strong>7月成功新品进入腰部 N 达人放量（15-20 位）；无抗鸡排 / 小笼包开始测品</li>
+      <li><strong>W2：</strong>开学季货盘组合确定（"开学早餐套装" A/B/C 三档）；预售页面搭建</li>
+      <li><strong>W3：</strong>开学季预热启动 — 种草视频集中发布"开学倒计时"内容</li>
+      <li><strong>W4：</strong><strong>馋嘴汇 8 月专场（开学季预售场）</strong>；自营场次提升至 4-5 场/天；微信豆日耗拉到 2-2.5w</li>
+    </ul>
+    <div class="kpi-banner">
+      <h3>8月 KPI</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="v">1300w</div><div class="l">总GMV（小熊300w）</div></div>
+        <div class="kpi-item"><div class="v">30-35 位</div><div class="l">达人合作数</div></div>
+        <div class="kpi-item"><div class="v">50-70 条</div><div class="l">种草视频</div></div>
+        <div class="kpi-item"><div class="v">4→5 场</div><div class="l">日均场次</div></div>
+        <div class="kpi-item"><div class="v">≥2.3</div><div class="l">综合 ROI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, #FFF0E5 0%, #FEE3D2 100%); border-color: var(--red);">
+    <h3>9月 · 爆发月 — "开学季大促 + 全渠道共振" ⭐</h3>
+    <ul style="margin: 8px 0 16px;">
+      <li><strong>W1：</strong>开学季第 1 周爆发 — <strong>馋嘴汇月初专场 + 自营全天候直播 + 投放全开</strong></li>
+      <li><strong>W2：</strong>持续热度 — 返场机制 + 未购用户召回</li>
+      <li><strong>W3：</strong><strong>馋嘴汇月中第二场专场</strong>叠加中秋节 — "中秋团圆饭 + 开学早餐"双场景</li>
+      <li><strong>W4：</strong>收尾 + 复盘 — 为 10月 / 双11 做准备</li>
+    </ul>
+    <div class="kpi-banner">
+      <h3>9月 KPI（爆发节点）</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="v">1600w</div><div class="l">总GMV（小熊400w）</div></div>
+        <div class="kpi-item"><div class="v">35-40 位</div><div class="l">达人合作数</div></div>
+        <div class="kpi-item"><div class="v">60-80 条</div><div class="l">种草视频</div></div>
+        <div class="kpi-item"><div class="v">5-6 场</div><div class="l">日均场次</div></div>
+        <div class="kpi-item"><div class="v">500w+</div><div class="l">话题播放量</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);">
+    <h3>10月 · 巩固月 — "渔博会溯源 + 双11蓄水"</h3>
+    <ul style="margin: 8px 0 16px;">
+      <li><strong>W1：</strong>渔博会工厂溯源 — 邀 N 达人到厂直播；自营"工厂溯源专场"</li>
+      <li><strong>W2：</strong>双11货盘确定 + 预售开启；种草视频进入"囤货指南"模式</li>
+      <li><strong>W3：</strong>双11预售期 — 自营 + 达播同步推进预售</li>
+      <li><strong>W4：</strong><strong>馋嘴汇 10 月专场（双11预热场）</strong>；预售数据复盘 + 双11正式期方案 final 确认</li>
+    </ul>
+    <div class="kpi-banner">
+      <h3>10月 KPI</h3>
+      <div class="kpi-grid">
+        <div class="kpi-item"><div class="v">1300w</div><div class="l">总GMV（小熊300w）</div></div>
+        <div class="kpi-item"><div class="v">30-35 位</div><div class="l">达人合作数</div></div>
+        <div class="kpi-item"><div class="v">5-6 场</div><div class="l">日均场次</div></div>
+        <div class="kpi-item"><div class="v">2.5-3w</div><div class="l">日均投放</div></div>
+        <div class="kpi-item"><div class="v">300-500w</div><div class="l">双11预售</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 组织协作 ============ -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <span class="section-num">06</span><h2>组织协作机制</h2>
+    <div class="sub-title">5 大角色 · 3 类会议 · 信息实时互通</div>
+  </div>
+
+  <div class="card">
+    <h3>团队分工</h3>
+    <table>
+      <tr><th>角色</th><th>职责</th><th>对接</th></tr>
+      <tr><td>达播 BD</td><td>馋嘴汇排期 + N 达人建联/排期/跟进/结算</td><td>达人侧全部对接</td></tr>
+      <tr><td>自营运营</td><td>直播间运营 / 脚本 / 主播管理 / 场控</td><td>内部直播 + 投放协同</td></tr>
+      <tr><td>投放专员</td><td>微信豆 / ADQ / 视频号小店账户管理 + 优化</td><td>运营提供素材 + 人群建议</td></tr>
+      <tr><td>内容策划</td><td>种草视频 brief / 话题策划 / KOC 管理</td><td>达播 BD 分发 brief</td></tr>
+      <tr><td>数据分析</td><td>全链路数据监控 / 周报 / 月报 / 测品报告</td><td>向所有人输出结论</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>会议节奏</h3>
+    <table>
+      <tr><th>会议</th><th>频率</th><th>参与人</th><th>输出</th></tr>
+      <tr><td>晨会</td><td>每日 9:00</td><td>运营 + 投放</td><td>当日直播计划 + 投放预算</td></tr>
+      <tr><td><strong>达播复盘</strong></td><td>每周五 14:00</td><td>BD + 运营 + 数据分析</td><td>本周达人表现排名 + 下周调整</td></tr>
+      <tr><td>月度经营会</td><td>每月最后工作日</td><td>全体 + 客户</td><td>月度 GMV 达成 + 下月规划 + 问题清单</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 07 风险预案 ============ -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <span class="section-num">07</span><h2>风险预案</h2>
+  </div>
+  <div class="card">
+    <table>
+      <tr><th>风险</th><th>可能性</th><th>影响</th><th>应对方案</th></tr>
+      <tr><td>新品达播 ROI 全线低于 1.0</td><td><span class="pill pill-orange">中</span></td><td>新品无法放量</td><td>立刻停测，回归 A2 手抓饼保基本盘；产品端复盘定价/卖点</td></tr>
+      <tr><td>自营直播间在线人数低迷</td><td><span class="pill pill-orange">中</span></td><td>自营 GMV 不达标</td><td>检查时段；加大微信豆引流；尝试户外/工厂新场景</td></tr>
+      <tr><td>投放 ROI 持续走低</td><td><span class="pill pill-orange">中</span></td><td>广告费浪费</td><td>缩减预算回安全 ROI；暂停低效素材；重审人群定向</td></tr>
+      <tr><td>馋嘴汇档期排不上</td><td><span class="pill pill-green">低</span></td><td>错失爆发机会</td><td>提前 45 天预约；备选头部 N 达人组合替代方案</td></tr>
+      <tr><td>竞品同期大促抢量</td><td><span class="pill pill-orange">中</span></td><td>流量成本飙升</td><td>避开竞品锋芒时段；强化差异化卖点（红绿灯食谱/SGS）；私域召回</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 08 GMV 总览 ============ -->
+<section class="section" id="s8">
+  <div class="section-header">
+    <span class="section-num">08</span><h2>7-10月 GMV 拆解总览</h2>
+    <div class="sub-title">按品牌拆解 · 增长路径可视化</div>
+  </div>
+
+  <div class="card">
+    <h3>7-10月 GMV 拆解（按品牌）</h3>
+    <table>
+      <tr>
+        <th>月</th><th>叮叮懒人菜</th><th>小熊早安</th><th>合计</th><th>小熊早安占比</th><th>累计</th>
+      </tr>
+      <tr style="opacity: 0.7;"><td>上半年（月均）</td><td>1200w</td><td>133w</td><td>1333w</td><td>10%</td><td>8000w</td></tr>
+      <tr><td><strong>7月</strong></td><td>1000w</td><td>250w</td><td><strong style="color:var(--brand-dark);">1250w</strong></td><td>20%</td><td>9250w</td></tr>
+      <tr><td><strong>8月</strong></td><td>1000w</td><td>300w</td><td><strong style="color:var(--brand-dark);">1300w</strong></td><td>23%</td><td>10550w</td></tr>
+      <tr><td><strong>9月</strong></td><td>1200w</td><td>400w</td><td><strong style="color:var(--red);">1600w</strong></td><td>25%</td><td>12150w</td></tr>
+      <tr><td><strong>10月</strong></td><td>1000w</td><td>300w</td><td><strong style="color:var(--brand-dark);">1300w</strong></td><td>23%</td><td>13450w</td></tr>
+      <tr style="background: linear-gradient(90deg, #FFFBF0, #FFF6E5);">
+        <td><strong>7-10月合计</strong></td><td><strong>4200w</strong></td><td><strong style="color:var(--orange);">1250w</strong></td><td><strong style="color:var(--brand-dark);">5450w</strong></td><td><strong>23%</strong></td><td>—</td>
+      </tr>
+      <tr style="background: linear-gradient(90deg, #F0F9FF, #E1F0FB);">
+        <td><strong>11-12月（大促）</strong></td><td>1100w</td><td>450w</td><td><strong style="color:var(--orange);">1550w</strong></td><td>29%</td><td><strong style="color:var(--red);">1.5亿 ✓</strong></td>
+      </tr>
+    </table>
+
+    <h3 style="margin-top: 28px;">小熊早安增长路径</h3>
+    <div class="growth-bar">
+      <div class="growth-col">
+        <div class="val">133w</div>
+        <div class="bar" style="height: 40px; background: linear-gradient(180deg, #BDC3C7, #95A5A6);"></div>
+        <div class="lbl">上半年月均</div>
+        <div class="lbl" style="color: var(--ink-3);">占比 10%</div>
+      </div>
+      <div class="growth-col">
+        <div class="val">250w</div>
+        <div class="bar" style="height: 75px; background: linear-gradient(180deg, #F39C12, #E67E22);"></div>
+        <div class="lbl">7月</div>
+        <div class="lbl" style="color: var(--green);">+88%</div>
+      </div>
+      <div class="growth-col">
+        <div class="val">300w</div>
+        <div class="bar" style="height: 90px; background: linear-gradient(180deg, #F39C12, #E67E22);"></div>
+        <div class="lbl">8月</div>
+        <div class="lbl" style="color: var(--green);">+125%</div>
+      </div>
+      <div class="growth-col">
+        <div class="val">400w</div>
+        <div class="bar" style="height: 120px; background: linear-gradient(180deg, #E74C3C, #C0392B);"></div>
+        <div class="lbl">9月 ⭐</div>
+        <div class="lbl" style="color: var(--green);">+201%</div>
+      </div>
+      <div class="growth-col">
+        <div class="val">300w</div>
+        <div class="bar" style="height: 90px; background: linear-gradient(180deg, #F39C12, #E67E22);"></div>
+        <div class="lbl">10月</div>
+        <div class="lbl" style="color: var(--green);">+125%</div>
+      </div>
+      <div class="growth-col">
+        <div class="val">225w</div>
+        <div class="bar" style="height: 68px; background: linear-gradient(180deg, #F39C12, #E67E22); opacity: 0.6;"></div>
+        <div class="lbl">11-12月均</div>
+        <div class="lbl" style="color: var(--green);">+69%</div>
+      </div>
+    </div>
+
+    <h4>增长驱动拆解（小熊早安 7-10月增量 1250w）</h4>
+    <table>
+      <tr><th>驱动因素</th><th>贡献增量</th><th>占比</th><th>说明</th></tr>
+      <tr><td><strong>达播测品放量</strong></td><td>~500w</td><td>40%</td><td>馋嘴汇专场 + N 达人矩阵，新品验证后快速放量</td></tr>
+      <tr><td><strong>自营追击增长</strong></td><td>~400w</td><td>32%</td><td>场次提升（3→5-6场）+ 达播话术复用 + 脚本优化</td></tr>
+      <tr><td><strong>投放放大</strong></td><td>~200w</td><td>16%</td><td>微信豆 + ADQ 加热，达人切片素材复用</td></tr>
+      <tr><td><strong>种草 + 话题溢出</strong></td><td>~150w</td><td>12%</td><td>种草视频长尾转化 + 话题自然流量溢出</td></tr>
+    </table>
+
+    <div class="highlight">
+      <strong>关键路径：</strong>小熊早安从月均 133w 增长至月均 312w（7-10月），增量 1250w 中 40% 来自达播、32% 来自自营、16% 来自投放、12% 来自种草。9月开学季为峰值月（400w），占比冲 25%。11-12月大促进一步放量至月均 225w，占比达 29%。叮叮懒人菜作为基本盘贡献 4200w（7-10月），保障集团现金流。
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="section">
+  <div class="card" style="background: linear-gradient(135deg, #2BA3E0 0%, #1A7AB8 100%); color: #fff; text-align: center; padding: 48px 28px;">
+    <h3 style="color: #FFD166; font-size: 22px; margin-bottom: 16px;">📌 一句话总结</h3>
+    <p style="font-size: 17px; line-height: 1.9; color: #fff; max-width: 900px; margin: 0 auto;">
+      7-10 月的打法就是 —— <strong style="color:#FFD166;">"懒人菜稳基本盘，小熊早安做增长引擎；馋嘴汇 1+N 达人测爆品，自营追击放量，微信豆/ADQ 火力支援，种草内容攻心为上"</strong>。<br><br>
+      四个模块环环相扣，信息实时互通，每周复盘迭代。小熊早安月均从 133w 冲到 300w+，占比从 10% 跃至 25%+，4 个月把集团 GMV 从 8000w 推到 1.35 亿，为年底大促的一锤定音打好基础。
+    </p>
+  </div>
+</section>
+
+<div class="footer">
+  <p><strong>叮叮懒人菜&小熊早安 · 视频号 7-10月经营策略</strong></p>
+  <p style="margin-top: 6px;">2026 Q3-Q4 · 叮叮懒人菜集团</p>
+</div>
+
+</div>
+</body>
+</html>
